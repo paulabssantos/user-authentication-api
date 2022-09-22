@@ -7,4 +7,9 @@ usersRoute.get('/users',(req: Request,res: Response,next: NextFunction)=>{
     res.status(200).send(users);
 });
 
+usersRoute.get("/users/:id",(req: Request<{id: number}>,res: Response,next: NextFunction)=>{
+    const id = req.params.id;
+    res.status(200).send(id);
+})
+
 export { usersRoute };
