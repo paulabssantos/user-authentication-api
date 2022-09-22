@@ -18,4 +18,11 @@ usersRoute.post("/create",(req: Request<{id: number}>,res: Response,next: NextFu
     res.status(201).send(new_user);
 })
 
+usersRoute.put("/update/:id",(req: Request<{id: number}>,res: Response,next: NextFunction)=>{
+    const id = req.params.id;
+    const modified = req.body;
+
+    res.status(200).send({id,modified});
+})
+
 export { usersRoute };
