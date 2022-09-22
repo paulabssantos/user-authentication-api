@@ -25,4 +25,8 @@ usersRoute.put("/update/:id",(req: Request<{id: number}>,res: Response,next: Nex
     res.status(200).send({id,modified});
 })
 
+usersRoute.delete("/delete/:id",(req: Request<{id: number}>,res: Response,next: NextFunction)=>{
+    res.sendStatus(200);
+})
+
 export { usersRoute };
