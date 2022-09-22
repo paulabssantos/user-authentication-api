@@ -2,11 +2,13 @@
   "name": "user-authentication-api",
   "version": "1.0.0",
   "description": "",
-  "main": "./dist/index.js",
+  "main": "./dist/server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node ./",
-    "build": "tsc -p ."
+    "build": "tsc -p .",
+    "dev": "ts-node-dev --respawn --transpile-only --ignore-watch node_modules --no-notify src/server.ts",
+    "commit": "git-cz"
   },
   "author": "",
   "license": "ISC",
@@ -15,6 +17,13 @@
   },
   "devDependencies": {
     "@types/express": "^4.17.14",
-    "@types/node": "^18.7.18"
+    "@types/node": "^18.7.18",
+    "cz-conventional-changelog": "^3.3.0",
+    "ts-node-dev": "^2.0.0"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }
